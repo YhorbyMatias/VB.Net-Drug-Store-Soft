@@ -13,32 +13,26 @@ Namespace Modulo
 
 
 
-        Public Sub LimpiarCampos(limpia As Control)
-            For Each c As Control In limpia.Controls
+        Public Sub LimpiarTexbox(clear As Control)
+            For Each set As Control In clear.Controls
                 ' Limpiar los Textbox
-                If TypeOf c Is TextBox Then
-                    c.Text = ""
+                If TypeOf set Is TextBox Then
+                    set.Text = ""
                 End If
-                If TypeOf c Is MaskedTextBox Then
-                    c.Text = "0.00"
+                If TypeOf set Is MaskedTextBox Then
+                   set.Text = "0.00"
                 End If
-                ' Limpiar los Label
-                ' If TypeOf c Is Label And c.Tag = 1 Then
-                'c.Text = ""
-                If TypeOf c Is NumericUpDown Then
-                    c.Text = "0"
+                
+                If TypeOf set Is DateTimePicker Then
+                    set.Text = ""
                 End If
 
-                If TypeOf c Is DateTimePicker Then
-                    c.Text = ""
+                If TypeOf set Is CheckBox Then
+                   set.Text = ""
                 End If
 
-                If TypeOf c Is CheckBox Then
-                    c.Text = ""
-                End If
-
-                If TypeOf c Is ComboBox Then
-                    c.Text = ""
+                If TypeOf set Is ComboBox Then
+                    set.Text = ""
 
                 End If
             Next
